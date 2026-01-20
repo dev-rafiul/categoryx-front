@@ -1,4 +1,61 @@
 export default function Home() {
+
+
+ const items = [
+  {
+    id: 1,
+    name: "MacBook Pro 14”",
+    category: "Laptop",
+    brand: "Apple",
+    description: "Powerful laptop with M3 chip, Liquid Retina XDR display, and all-day battery life.",
+    price: 1999,
+    currency: "USD",
+    stock: 12,
+    rating: 4.8,
+    image: "https://images.unsplash.com/photo-1649394233584-217c46cb9612?w=400"
+  },
+  {
+    id: 2,
+    name: "Dell XPS 13",
+    category: "Laptop",
+    brand: "Dell",
+    description: "Ultra-thin premium laptop with InfinityEdge display and Intel Core i7 processor.",
+    price: 1499,
+    currency: "USD",
+    stock: 8,
+    rating: 4.6,
+    image: "https://images.unsplash.com/photo-1720556405438-d67f0f9ecd44?w=400"
+  },
+  {
+    id: 3,
+    name: "iPhone 15 Pro",
+    category: "Smartphone",
+    brand: "Apple",
+    description: "Latest iPhone with A17 chip, titanium body, and advanced camera system.",
+    price: 1199,
+    currency: "USD",
+    stock: 20,
+    rating: 4.9,
+    image: "https://images.unsplash.com/photo-1740650698612-786deca48ee1?w=400"
+  },
+  {
+    id: 4,
+    name: "Samsung Galaxy S24 Ultra",
+    category: "Smartphone",
+    brand: "Samsung",
+    description: "Flagship Android phone with 200MP camera, S-Pen, and massive AMOLED display.",
+    price: 1299,
+    currency: "USD",
+    stock: 15,
+    rating: 4.7,
+    image: "https://images.unsplash.com/photo-1706372124814-417e2f0c3fe0?w=400"
+  }
+];
+
+
+
+
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -73,13 +130,13 @@ export default function Home() {
       </section>
 
       {/* Popular Products Section */}
-      <section className="py-45 bg-white dark:bg-slate-900">
+      {/* <section className="py-45 bg-white dark:bg-slate-900">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             Popular Products
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
+            {items.map((item) => (
               <div key={item} className="card hover:shadow-lg transition-shadow">
                 <div className="bg-gray-200 dark:bg-gray-700 h-48 rounded mb-4"></div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
@@ -95,7 +152,64 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+{/* Popular Products Section */}
+<section className="py-20 bg-white dark:bg-slate-900">
+  <div className="container">
+    <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+      Popular Products
+    </h2>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {items.map((item) => (
+        <div
+          key={item.id}
+          className="card hover:shadow-xl transition-shadow"
+        >
+          {/* Image */}
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-48 w-full object-cover rounded mb-4"
+          />
+
+          {/* Product Info */}
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {item.brand} • {item.category}
+          </p>
+
+          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+            {item.name}
+          </h3>
+
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+            {item.description}
+          </p>
+
+          {/* Price & Rating */}
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-xl font-bold text-blue-600">
+              ${item.price}
+            </span>
+            <span className="text-sm text-yellow-500">
+              ⭐ {item.rating}
+            </span>
+          </div>
+
+          <button className="btn btn-primary w-full">
+            View Details
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
 
       {/* How It Works Section */}
       <section className="py-40 bg-blue-50 dark:bg-slate-800">

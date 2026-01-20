@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📌 Project Overview
 
-## Getting Started
+The application demonstrates routing, authentication, and API integration in Next.js. Users can view items publicly, see item details, and authenticated users can add new items through a protected page. Authentication is handled using cookies with hardcoded credentials.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Landing page with 7 sections (excluding Navbar & Footer)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Navbar with navigation to Login and Items page
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Mock authentication using cookies
 
-## Learn More
+Public item listing page
 
-To learn more about Next.js, take a look at the following resources:
+Item details page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Protected add-item page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Express.js API for fetching and storing items
 
-## Deploy on Vercel
+Toast notification on successful item creation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Route         | Description  | Access    |
+| ------------- | ------------ | --------- |
+| `/`           | Landing page | Public    |
+| `/login`      | Login page   | Public    |
+| `/items`      | Item list    | Public    |
+| `/items/[id]` | Item details | Public    |
+| `/add-item`   | Add new item | Protected |
+
+
+
+🛠️ Technologies Used
+Frontend
+
+Next.js 15/16 (App Router)
+
+React
+
+Tailwind CSS
+
+Cookies for authentication
+
+React Hot Toast
+
+Backend
+
+Node.js
+
+Express.js
+
+JSON-based data storage
