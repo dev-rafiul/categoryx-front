@@ -5,7 +5,7 @@ export default function ItemsPage() {
   const categories = [...new Set(items.map(i => i.category))];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen  py-8">
       <div className="max-w-7xl mx-auto px-4">
 
         <h1 className="text-4xl font-bold text-center mb-10">
@@ -13,7 +13,7 @@ export default function ItemsPage() {
         </h1>
 
         {/* Filter */}
-        <div className="bg-white p-6 rounded-lg shadow mb-8 flex gap-4">
+        <div className=" p-6 rounded-lg shadow mb-8 flex gap-4">
           <input
             placeholder="Search items..."
             className="flex-1 px-4 py-2 border rounded"
@@ -29,11 +29,11 @@ export default function ItemsPage() {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(item => (
-            <div key={item.id} className="bg-white rounded-lg shadow overflow-hidden">
+            <div key={item.id} className=" rounded-lg shadow overflow-hidden">
               <img src={item.image} className="h-48 w-full object-cover" />
 
               <div className="p-6">
-                <span className="text-xs bg-blue-100 px-2 py-1 rounded">
+                <span className="text-xs px-2 py-1 rounded">
                   {item.category}
                 </span>
 
