@@ -1,7 +1,7 @@
 @import "tailwindcss";
-
-@theme {
-  /* Light theme colors */
+@plugin "daisyui";
+/* @theme {
+  
   --color-primary: #3b82f6;
   --color-primary-hover: #2563eb;
   --color-secondary: #64748b;
@@ -16,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   @theme {
-    /* Dark theme colors */
+  
     --color-primary: #60a5fa;
     --color-primary-hover: #3b82f6;
     --color-secondary: #94a3b8;
@@ -30,7 +30,7 @@
   }
 }
 
-/* Base styles for better UX */
+
 * {
   box-sizing: border-box;
 }
@@ -44,7 +44,7 @@ body {
   padding: 0;
 }
 
-/* Beginner-friendly utility classes */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -146,4 +146,4 @@ body {
 
 .shadow {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
+} */

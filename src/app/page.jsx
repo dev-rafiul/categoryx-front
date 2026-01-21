@@ -59,13 +59,15 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#30364F]">
       {/* Hero Section */}
-      <section className="bg-white text-black py-80">
+      <section className="text-black py-80">
         <div className="container text-center">
           <h1 className="text-5xl font-bold text-gray-900  mb-6">
             Welcome to CatalogX
+
           </h1>
+          
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             Discover amazing products and services in our comprehensive catalog. 
             Find exactly what you're looking for with ease.
