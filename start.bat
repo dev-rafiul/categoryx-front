@@ -1,0 +1,19 @@
+@echo off
+echo Starting CatalogX Application...
+echo.
+echo Starting Express API Server...
+start "API Server" cmd /k "npm run server"
+echo.
+echo Waiting 3 seconds for API server to start...
+timeout /t 3 /nobreak > nul
+echo.
+echo Starting Next.js Development Server...
+start "Next.js Dev" cmd /k "npm run dev"
+echo.
+echo Both servers are starting...
+echo.
+echo Frontend: http://localhost:3000
+echo API: http://localhost:5000
+echo.
+echo Press any key to exit...
+pause > nul

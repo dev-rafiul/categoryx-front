@@ -7,11 +7,13 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 export default function AddItem() {
   const [formData, setFormData] = useState({
     name: "",
+    brand: "",
     description: "",
     price: "",
     category: "",
     condition: "new",
-    images: []
+    image: "",
+    stock: "1"
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,12 +51,14 @@ export default function AddItem() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: Date.now().toString(), // Generate a simple ID
           name: formData.name,
+          brand: formData.brand,
           description: formData.description,
           price: parseFloat(formData.price),
           category: formData.category,
           condition: formData.condition,
+          image: formData.image || 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400',
+          stock: parseInt(formData.stock) || 1
         }),
       });
 
@@ -62,11 +66,13 @@ export default function AddItem() {
         setSubmitSuccess(true);
         setFormData({
           name: "",
+          brand: "",
           description: "",
           price: "",
           category: "",
           condition: "new",
-          images: []
+          image: "",
+          stock: "1"
         });
       } else {
         throw new Error("Failed to add item");
@@ -147,6 +153,23 @@ export default function AddItem() {
                 />
               </div>
 
+              {/* Brand */}
+              <div>
+                <label htmlFor="brand" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Brand *
+                </label>
+                <input
+                  type="text"
+                  id="brand"
+                  name="brand"
+                  required
+                  value={formData.brand}
+                  onChange={handleInputChange}
+                  placeholder="Enter brand name"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                />
+              </div>
+
               {/* Description */}
               <div>
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -164,8 +187,8 @@ export default function AddItem() {
                 />
               </div>
 
-              {/* Price and Category Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Price, Category, and Stock Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Price */}
                 <div>
                   <label htmlFor="price" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -204,6 +227,24 @@ export default function AddItem() {
                     ))}
                   </select>
                 </div>
+
+                {/* Stock */}
+                <div>
+                  <label htmlFor="stock" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Stock Quantity *
+                  </label>
+                  <input
+                    type="number"
+                    id="stock"
+                    name="stock"
+                    required
+                    min="0"
+                    value={formData.stock}
+                    onChange={handleInputChange}
+                    placeholder="1"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  />
+                </div>
               </div>
 
               {/* Condition */}
@@ -230,30 +271,23 @@ export default function AddItem() {
                 </div>
               </div>
 
-              {/* Image Upload */}
+              {/* Image URL */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Images
+                <label htmlFor="image" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Image URL
                 </label>
-                <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center hover:border-blue-500 dark:hover:border-blue-400 transition-colors">
-                  <div className="text-4xl mb-2">📷</div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-2">
-                    Drag and drop images here, or click to select
-                  </p>
-                  <input
-                    type="file"
-                    multiple
-                    accept="image/*"
-                    className="hidden"
-                    id="images"
-                  />
-                  <label
-                    htmlFor="images"
-                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg cursor-pointer transition-colors duration-200"
-                  >
-                    Choose Images
-                  </label>
-                </div>
+                <input
+                  type="url"
+                  id="image"
+                  name="image"
+                  value={formData.image}
+                  onChange={handleInputChange}
+                  placeholder="https://example.com/image.jpg (optional)"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                />
+                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                  Leave empty to use a default placeholder image
+                </p>
               </div>
 
               {/* Submit Buttons */}

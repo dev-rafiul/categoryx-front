@@ -1,7 +1,7 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 
 export default function ItemDetailsPage() {
@@ -62,30 +62,28 @@ export default function ItemDetailsPage() {
           />
 
           <div className="p-6">
-            <h1 className="text-3xl font-bold mb-2">{item.name}</h1>
+            <h1 className="text-3xl font-bold mb-2">
+              {item.name}
+            </h1>
 
             <p className="text-gray-500 mb-4">
               {item.brand} • {item.category}
             </p>
 
-            <p className="mb-4">{item.description}</p>
+            <p className="mb-4">
+              {item.description}
+            </p>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div>
-                <strong>Price:</strong> ${item.price}
-              </div>
-              <div>
-                <strong>Stock:</strong> {item.stock}
-              </div>
-              <div>
-                <strong>Rating:</strong> ⭐ {item.rating}
-              </div>
-              <div>
-                <strong>Currency:</strong> {item.currency}
-              </div>
+              <div><strong>Price:</strong> ${item.price}</div>
+              <div><strong>Stock:</strong> {item.stock}</div>
+              <div><strong>Rating:</strong> ⭐ {item.rating}</div>
+              <div><strong>Currency:</strong> {item.currency}</div>
             </div>
 
-            
+            <button className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>

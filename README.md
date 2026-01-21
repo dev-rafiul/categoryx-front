@@ -1,54 +1,159 @@
-📌 Project Overview
+# CatalogX - Next.js Product Catalog Application
 
-The application demonstrates routing, authentication, and API integration in Next.js. Users can view items publicly, see item details, and authenticated users can add new items through a protected page. Authentication is handled using cookies with hardcoded credentials.
+A modern, responsive product catalog application built with Next.js 16, featuring authentication, product management, and a clean user interface.
 
+## 🚀 Features
 
-✨ Features
+### Core Features
+- **Landing Page**: 7 comprehensive sections showcasing the platform
+- **Authentication**: Mock login system with cookie-based session management
+- **Product Catalog**: Browse, search, and filter products
+- **Product Details**: Detailed product information pages
+- **Add Products**: Protected route for adding new items (requires login)
+- **Responsive Design**: Mobile-first design with Tailwind CSS
 
-Landing page with 7 sections (excluding Navbar & Footer)
+### Technical Features
+- Next.js 16 with App Router
+- Server-side API with Express.js
+- Cookie-based authentication
+- Protected routes
+- Real-time search and filtering
+- Dark mode support
+- Modern UI components
 
-Navbar with navigation to Login and Items page
+## 🛠️ Technologies Used
 
-Mock authentication using cookies
+- **Frontend**: Next.js 16, React 19, Tailwind CSS 4
+- **Backend**: Express.js, Node.js
+- **Authentication**: Cookie-based sessions
+- **Styling**: Tailwind CSS with custom design system
+- **Development**: ESLint, Concurrently
 
-Public item listing page
+## 📦 Installation
 
-Item details page
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd categoryx
+   ```
 
-Protected add-item page
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Express.js API for fetching and storing items
+3. **Start the development servers**
+   ```bash
+   # Start both Next.js and Express server
+   npm run dev:full
+   
+   # Or start them separately:
+   # Terminal 1: Start Express API server
+   npm run server
+   
+   # Terminal 2: Start Next.js development server
+   npm run dev
+   ```
 
-Toast notification on successful item creation
+4. **Access the application**
+   - Frontend: http://localhost:3000
+   - API Server: http://localhost:5000
 
+## 🔐 Authentication
 
-| Route         | Description  | Access    |
-| ------------- | ------------ | --------- |
-| `/`           | Landing page | Public    |
-| `/login`      | Login page   | Public    |
-| `/items`      | Item list    | Public    |
-| `/items/[id]` | Item details | Public    |
-| `/add-item`   | Add new item | Protected |
+The application uses mock authentication with hardcoded credentials:
 
+- **Email**: admin@catalogx.com
+- **Password**: 123456
 
+## 📱 Pages & Routes
 
-🛠️ Technologies Used
-Frontend
+### Public Routes
+- `/` - Landing page with 7 sections
+- `/items` - Product catalog (publicly accessible)
+- `/items/[id]` - Product details page
+- `/login` - Authentication page
 
-Next.js 15/16 (App Router)
+### Protected Routes
+- `/add-item` - Add new products (requires authentication)
 
-React
+## 🎨 Design System
 
-Tailwind CSS
+The application uses a custom design system built on Tailwind CSS with:
+- Custom color palette with dark mode support
+- Reusable component classes (btn, card, input, etc.)
+- Responsive grid layouts
+- Modern typography and spacing
 
-Cookies for authentication
+## 🔧 API Endpoints
 
-React Hot Toast
+The Express server provides the following endpoints:
 
-Backend
+- `GET /items` - Fetch all items
+- `GET /items/:id` - Fetch single item
+- `POST /items` - Add new item
+- `PUT /items/:id` - Update item
+- `DELETE /items/:id` - Delete item
+- `GET /health` - Health check
 
-Node.js
+## 📁 Project Structure
 
-Express.js
+```
+src/
+├── app/
+│   ├── add-item/          # Add product page
+│   ├── items/             # Product catalog
+│   │   ├── [id]/          # Product details
+│   │   ├── data.js        # Product data
+│   │   └── page.jsx       # Catalog page
+│   ├── login/             # Authentication
+│   ├── globals.css        # Global styles
+│   ├── layout.jsx         # Root layout
+│   └── page.jsx           # Landing page
+├── components/
+│   ├── Footer.jsx         # Footer component
+│   ├── Navbar.jsx         # Navigation
+│   └── ProtectedRoute.jsx # Auth wrapper
+└── lib/
+    └── auth.js            # Auth utilities
+```
 
-JSON-based data storage
+## 🚀 Deployment
+
+### Development
+```bash
+npm run dev:full
+```
+
+### Production
+```bash
+npm run build
+npm start
+```
+
+## 🎯 Key Features Implemented
+
+✅ **Landing Page**: 7 sections (Hero, Features, Categories, Products, How It Works, Testimonials, CTA)  
+✅ **Authentication**: Mock login with cookie storage  
+✅ **Protected Routes**: Add-item page requires authentication  
+✅ **Product Catalog**: Search, filter, and sort functionality  
+✅ **Product Details**: Comprehensive product information  
+✅ **API Integration**: Express server for data management  
+✅ **Responsive Design**: Mobile-first approach  
+✅ **Dark Mode**: System preference detection  
+
+## 🔄 Data Management
+
+Products are stored in `src/app/items/data.js` and managed through the Express API. The API automatically reads from and writes to this file, providing persistence across server restarts.
+
+## 🎨 Customization
+
+The application uses CSS custom properties for theming. You can customize colors, spacing, and other design tokens in `src/app/globals.css`.
+
+## 📝 License
+
+This project is private and proprietary.
+
+---
+
+**Happy coding! 🎉**

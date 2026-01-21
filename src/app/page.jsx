@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
 
 
@@ -59,9 +61,9 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800 py-80">
+      <section className="bg-white text-black py-80">
         <div className="container text-center">
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-5xl font-bold text-gray-900  mb-6">
             Welcome to CatalogX
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -129,31 +131,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Popular Products Section */}
-      {/* <section className="py-45 bg-white dark:bg-slate-900">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Popular Products
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {items.map((item) => (
-              <div key={item} className="card hover:shadow-lg transition-shadow">
-                <div className="bg-gray-200 dark:bg-gray-700 h-48 rounded mb-4"></div>
-                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-                  Product {item}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Amazing product description that highlights key features.
-                </p>
-                <button className="btn btn-primary w-full">
-                  View Details
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
 
 {/* Popular Products Section */}
 <section className="py-20 bg-white dark:bg-slate-900">
@@ -198,9 +175,12 @@ export default function Home() {
             </span>
           </div>
 
-          <button className="btn btn-primary w-full">
-            View Details
-          </button>
+          <Link
+                  href={`/items/${item.id}`}
+                  className="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                >
+                  View Details
+                </Link>
         </div>
       ))}
     </div>

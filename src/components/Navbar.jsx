@@ -4,13 +4,18 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { isAuthenticated, logout } from "@/lib/auth";
 
+import { usePathname } from "next/navigation";
+
+
 export default function Navbar() {
   const [isAuth, setIsAuth] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+const pathname = usePathname();
+
   useEffect(() => {
     setIsAuth(isAuthenticated());
-  }, []);
+  }, [pathname]);
 
   const handleLogout = () => {
     logout();
