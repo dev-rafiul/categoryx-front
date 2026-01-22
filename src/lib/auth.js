@@ -1,8 +1,8 @@
-// Authentication utilities
+
 export function isAuthenticated() {
   if (typeof window === 'undefined') return false;
   
-  // Check for auth cookie
+  
   const cookies = document.cookie.split(';');
   const authCookie = cookies.find(cookie => 
     cookie.trim().startsWith('auth=')
@@ -19,7 +19,7 @@ export function redirectToLogin() {
 
 export function logout() {
   if (typeof window !== 'undefined') {
-    // Clear auth cookie
+  
     document.cookie = 'auth=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     window.location.href = '/login';
   }

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -123,7 +122,7 @@ export default function AddItem() {
     <ProtectedRoute>
       <div className="min-h-screen py-8 mt-25">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
+        
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Add New Item
@@ -133,10 +132,10 @@ export default function AddItem() {
             </p>
           </div>
 
-          {/* Form */}
+          
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Item Name */}
+              
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Item Name *
@@ -153,7 +152,7 @@ export default function AddItem() {
                 />
               </div>
 
-              {/* Brand */}
+            
               <div>
                 <label htmlFor="brand" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Brand *
@@ -170,7 +169,7 @@ export default function AddItem() {
                 />
               </div>
 
-              {/* Description */}
+            
               <div>
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Description *
@@ -187,9 +186,9 @@ export default function AddItem() {
                 />
               </div>
 
-              {/* Price, Category, and Stock Row */}
+              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Price */}
+                
                 <div>
                   <label htmlFor="price" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Price ($) *
@@ -208,7 +207,6 @@ export default function AddItem() {
                   />
                 </div>
 
-                {/* Category */}
                 <div>
                   <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Category *
@@ -228,7 +226,6 @@ export default function AddItem() {
                   </select>
                 </div>
 
-                {/* Stock */}
                 <div>
                   <label htmlFor="stock" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Stock Quantity *
@@ -247,7 +244,6 @@ export default function AddItem() {
                 </div>
               </div>
 
-              {/* Condition */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                   Condition *
@@ -271,7 +267,6 @@ export default function AddItem() {
                 </div>
               </div>
 
-              {/* Image URL */}
               <div>
                 <label htmlFor="image" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Image URL
@@ -290,7 +285,6 @@ export default function AddItem() {
                 </p>
               </div>
 
-              {/* Submit Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <button
                   type="submit"
@@ -319,7 +313,6 @@ export default function AddItem() {
             </form>
           </div>
 
-          {/* Help Text */}
           <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
             <h3 className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
               Tips for a great listing:

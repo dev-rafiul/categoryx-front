@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+import img from "../../public/nordwood-themes-kRNZiGKtz48-unsplash.jpg";
+
+
+
 export default function Home() {
 
 
@@ -59,130 +63,114 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-[#30364F]">
-      {/* Hero Section */}
-      <section className="text-black py-80">
-        <div className="container text-center">
-          <h1 className="text-5xl font-bold text-gray-900  mb-6">
-            Welcome to CatalogX
+    <div className="min-h-screen bg-[#E1D9BC]">
+      
+        <div
+  className="relative py-95 bg-cover bg-center"
+  style={{ backgroundImage: `url(${img.src})` }}
+>
+  <div className="absolute inset-0 bg-black/50"></div>
 
-          </h1>
-          
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            Discover amazing products and services in our comprehensive catalog. 
-            Find exactly what you're looking for with ease.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <button className="btn btn-primary text-lg px-8 py-3">
-              Get Started
-            </button>
-            <button className="btn btn-secondary text-lg px-8 py-3">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </section>
+  <div className="relative text-center z-10">
+    <h1 className="text-5xl font-semibold mb-6 text-[#E1D9BC]">
+      Welcome to Catalog <span className="font-bold ">X</span> 
+    </h1>
 
-      {/* Features Section */}
-      <section className=" bg-white dark:bg-slate-900 py-80">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Why Choose CatalogX?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card text-center">
-              <div className="text-4xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Easy Search</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Find products quickly with our powerful search and filtering system.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Fast & Reliable</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Lightning-fast performance with 99.9% uptime guarantee.
-              </p>
-            </div>
-            <div className="card text-center">
-              <div className="text-4xl mb-4">🛡️</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Secure</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Your data is protected with enterprise-grade security measures.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <p className="text-xl mb-8 max-w-2xl mx-auto text-[#F0F0DB]">
+     Latest gadgets and electronic devices including smartphones, laptops, accessories, and smart home technology designed to make life easier and more connected.
+    </p>
 
-      {/* Categories Section */}
-      <section className="py-50 bg-gray-50 dark:bg-slate-800">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Browse Categories
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['Electronics', 'Fashion', 'Home & Garden', 'Sports'].map((category) => (
-              <div key={category} className="card hover:shadow-lg transition-shadow cursor-pointer">
-                <h3 className="text-lg font-semibold text-center text-gray-900 dark:text-white">
-                  {category}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="flex gap-4 justify-center">
+      <Link href={"/items"} className="btn">All Items</Link>
+      <Link href={"/add-item"} className="btn btn-ghost">Add-Item</Link>
+    </div>
+  </div>
+</div>
 
+      
+      
 
-{/* Popular Products Section */}
-<section className="py-20 bg-white dark:bg-slate-900">
-  <div className="container">
-    <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-      Popular Products
+      <section className="bg-[#F7F6F2] dark:bg-slate-900 py-32">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-semibold text-center mb-14 text-gray-900 dark:text-[#E1D9BC]">
+      Why Choose CatalogX?
     </h2>
 
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      {items.map((item) => (
+    <div className="grid md:grid-cols-3 gap-10">
+      
+      <div className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center shadow-sm hover:shadow-md transition">
+        <div className="text-4xl mb-5 text-blue-600">🔍</div>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+          Easy Search
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Quickly find exactly what you need with advanced search and smart filtering options.
+        </p>
+      </div>
+
+      
+      <div className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center shadow-sm hover:shadow-md transition">
+        <div className="text-4xl mb-5 text-blue-600">⚡</div>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+          Fast & Reliable
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Optimized performance with reliable infrastructure to ensure smooth and fast access.
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center shadow-sm hover:shadow-md transition">
+        <div className="text-4xl mb-5 text-blue-600">🛡️</div>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+          Secure Platform
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Enterprise-grade security to protect your data and ensure complete privacy.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   {/* Categories Section */}
+<section className="py-28 bg-[#F7F6F2] dark:bg-slate-900">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 text-gray-900 dark:text-[#E1D9BC]">
+      Browse Categories
+    </h2>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {[
+        {
+          name: 'Electronics',
+          desc: 'Smart devices, gadgets, and accessories'
+        },
+        {
+          name: 'Fashion',
+          desc: 'Clothing, footwear, and lifestyle trends'
+        },
+        {
+          name: 'Home & Garden',
+          desc: 'Furniture, décor, and home essentials'
+        },
+        {
+          name: 'Sports',
+          desc: 'Gear and equipment for active lifestyles'
+        }
+      ].map((category) => (
         <div
-          key={item.id}
-          className="card hover:shadow-xl transition-shadow"
+          key={category.name}
+          className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition cursor-pointer"
         >
-          {/* Image */}
-          <img
-            src={item.image}
-            alt={item.name}
-            className="h-48 w-full object-cover rounded mb-4"
-          />
-
-          {/* Product Info */}
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {item.brand} • {item.category}
-          </p>
-
-          <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-            {item.name}
+          <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+            {category.name}
           </h3>
 
-          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
-            {item.description}
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            {category.desc}
           </p>
-
-          {/* Price & Rating */}
-          <div className="flex justify-between items-center mb-4">
-            <span className="text-xl font-bold text-blue-600">
-              ${item.price}
-            </span>
-            <span className="text-sm text-yellow-500">
-              ⭐ {item.rating}
-            </span>
-          </div>
-
-          <Link
-                  href={`/items/${item.id}`}
-                  className="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                >
-                  View Details
-                </Link>
         </div>
       ))}
     </div>
@@ -192,73 +180,170 @@ export default function Home() {
 
 
 
+<section className="py-28 bg-[#F7F6F2] dark:bg-slate-900">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 text-gray-900 dark:text-[#E1D9BC]">
+      Popular Products
+    </h2>
 
-      {/* How It Works Section */}
-      <section className="py-40 bg-blue-50 dark:bg-slate-800">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            How It Works
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Browse', desc: 'Explore our vast catalog of products' },
-              { step: '2', title: 'Compare', desc: 'Compare features and prices easily' },
-              { step: '3', title: 'Choose', desc: 'Select the perfect product for you' }
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {items.map((item) => (
+        <div
+          key={item.id}
+          className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition"
+        >
+          {/* Image */}
+          <div className="h-48 overflow-hidden">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+            <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">
+              {item.brand} • {item.category}
+            </p>
+
+            <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              {item.name}
+            </h3>
+
+            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+              {item.description}
+            </p>
+
+            {/* Price & Rating */}
+            <div className="flex justify-between items-center mb-5">
+              <span className="text-lg font-semibold text-blue-600">
+                ${item.price}
+              </span>
+              <span className="text-sm text-yellow-500 font-medium">
+                ★ {item.rating}
+              </span>
+            </div>
+
+            <Link
+              href={`/items/${item.id}`}
+              className="block text-center border border-blue-600 text-blue-600 font-medium px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition"
+            >
+              View Details
+            </Link>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* Testimonials Section */}
-      <section className="py-49 bg-white dark:bg-slate-900">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            What Our Users Say
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              { name: 'Sarah Johnson', text: 'CatalogX made finding the perfect product so easy!' },
-              { name: 'Mike Chen', text: 'Great selection and amazing user experience.' }
-            ].map((testimonial) => (
-              <div key={testimonial.name} className="card">
-                <p className="text-gray-600 dark:text-gray-300 mb-4 italic">
-                  "{testimonial.text}"
-                </p>
-                <div className="font-semibold text-gray-900 dark:text-white">
-                  - {testimonial.name}
-                </div>
-              </div>
-            ))}
+
+
+
+<section className="py-32 bg-[#F7F6F2] dark:bg-slate-900">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 text-gray-900 dark:text-[#E1D9BC]">
+      How It Works
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-12">
+      {[
+        {
+          step: '01',
+          title: 'Browse Products',
+          desc: 'Explore a curated catalog of high-quality products across multiple categories.'
+        },
+        {
+          step: '02',
+          title: 'Compare Options',
+          desc: 'Evaluate features, pricing, and ratings to make informed decisions.'
+        },
+        {
+          step: '03',
+          title: 'Choose Confidently',
+          desc: 'Select the product that best matches your needs and preferences.'
+        }
+      ].map((item) => (
+        <div
+          key={item.step}
+          className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center shadow-sm hover:shadow-md transition"
+        >
+          <div className="text-blue-600 text-sm font-semibold mb-4 tracking-wide">
+            STEP {item.step}
           </div>
-        </div>
-      </section>
 
-      {/* Call To Action Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join thousands of satisfied users today!
+          <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+            {item.title}
+          </h3>
+
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            {item.desc}
           </p>
-          <button className="btn bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
-            Start Exploring
-          </button>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+      
+
+     <section className="py-32 bg-white dark:bg-slate-900">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 text-gray-900 dark:text-[#E1D9BC]">
+      What Our Users Say
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      {[
+        {
+          name: 'Sarah Johnson',
+          role: 'Product Manager',
+          text: 'CatalogX simplifies product discovery and comparison. It has become an essential tool for our team.'
+        },
+        {
+          name: 'Mike Chen',
+          role: 'Tech Enthusiast',
+          text: 'Clean interface, fast performance, and accurate information. Highly recommended.'
+        }
+      ].map((testimonial) => (
+        <div
+          key={testimonial.name}
+          className="bg-[#F7F6F2] dark:bg-slate-800 rounded-xl p-8 shadow-sm"
+        >
+          <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            “{testimonial.text}”
+          </p>
+
+          <div className="font-semibold text-gray-900 dark:text-white">
+            {testimonial.name}
+          </div>
+          <div className="text-sm text-gray-500 dark:text-gray-400">
+            {testimonial.role}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+      <section className="py-24 bg-[#1E3A8A] text-white">
+  <div className="container mx-auto px-4 text-center max-w-3xl">
+    <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+      Ready to Get Started?
+    </h2>
+
+    <p className="text-lg mb-10 opacity-90">
+      Discover, compare, and choose products with confidence using CatalogX.
+    </p>
+
+    <button className="bg-white text-[#1E3A8A] font-semibold px-10 py-4 rounded-lg hover:bg-gray-100 transition">
+      Start Exploring
+    </button>
+  </div>
+</section>
+
     </div>
   );
 }

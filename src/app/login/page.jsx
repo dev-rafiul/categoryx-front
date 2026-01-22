@@ -29,7 +29,7 @@ export default function Login() {
     setError("");
 
     try {
-      // Simulate API call delay
+      
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       if (formData.email === "admin@catalogx.com" && formData.password === "123456") {
@@ -48,7 +48,7 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
-        {/* Header */}
+        
         <div className="text-center">
           <Link href="/" className="text-3xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
             CatalogX
@@ -64,10 +64,9 @@ export default function Login() {
           </p>
         </div>
 
-        {/* Login Form */}
         <div className="bg-white dark:bg-gray-800 py-8 px-6 shadow-lg rounded-lg">
           <form className="space-y-6" onSubmit={handleLogin}>
-            {/* Error Message */}
+            
             {error && (
               <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
                 <div className="flex">
@@ -83,7 +82,6 @@ export default function Login() {
               </div>
             )}
 
-            {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Email address
@@ -101,7 +99,6 @@ export default function Login() {
               />
             </div>
 
-            {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Password
@@ -137,7 +134,6 @@ export default function Login() {
               </div>
             </div>
 
-            {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
@@ -158,7 +154,6 @@ export default function Login() {
               </div>
             </div>
 
-            {/* Submit Button */}
             <div>
               <button
                 type="submit"
@@ -180,7 +175,6 @@ export default function Login() {
             </div>
           </form>
 
-          {/* Demo Credentials */}
           <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
             <h3 className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
               Demo Credentials:
@@ -192,7 +186,6 @@ export default function Login() {
           </div>
         </div>
 
-        {/* Social Login Options */}
         <div className="bg-white dark:bg-gray-800 py-6 px-6 shadow-lg rounded-lg">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
@@ -223,7 +216,6 @@ export default function Login() {
           </div>
         </div>
 
-        {/* Footer Links */}
         <div className="text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Don't have an account?{' '}

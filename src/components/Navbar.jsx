@@ -19,7 +19,7 @@ export default function Navbar() {
    
      
 
-       <div className="navbar fixed top-0 left-0 z-50 bg-black/10  backdrop-blur-md mx-1 my-5 sm:px-20 rounded-4xl px-5 shadow">
+       <div className="navbar fixed top-0 left-0 z-50 bg-[#30364F]/40 backdrop-blur-[6px] mx-1 my-5 sm:px-20 rounded-4xl px-5 shadow">
 
     {/* LEFT */}
     <div className="navbar-start">
@@ -46,27 +46,26 @@ export default function Navbar() {
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow "
         >
           <li>
-            <Link href="/items" className="text-black">Items</Link>
+            <Link href="/items" className="btn rounded-full hidden lg:inline-flex shadow-none hover:bg-[#F0F0DB] border-none bg-[#E1D9BC] text-[#30364F">Items</Link>
           </li>
 
           {isAuth && (
             <li>
-              <Link href="/add-item">Add Item</Link>
+              <Link href="/add-item" className="btn border-none">Add Item</Link>
             </li>
           )}
         </ul>
       </div>
 
-      <Link href="/" className="btn btn-ghost text-xl">
-        daisyUI
+      <Link href="/" className="font-semibold text-xl border-none ">
+        Category <span className="font-bold text-[#E1D9BC] ">X</span> 
       </Link>
     </div>
 
-    {/* CENTER */}
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
         <li>
-          <Link href="/items" className="btn text-white">Items</Link>
+          <Link href="/items" className="btn rounded-full hidden lg:inline-flex hover:bg-[#F0F0DB] border-none bg-[#E1D9BC] text-[#30364F] shadow">Items</Link>
         </li>
       </ul>
     </div>
@@ -77,17 +76,17 @@ export default function Navbar() {
         <>
           <Link
             href="/add-item"
-            className="btn hidden lg:inline-flex shadow-none"
+            className="btn rounded-full hidden lg:inline-flex hover:bg-[#F0F0DB] border-none bg-[#E1D9BC] text-[#30364F] shadow-2xl"
           >
             Add Item
           </Link>
 
-          <button onClick={handleLogout} className="btn">
+          <button onClick={handleLogout} className="btn border-none bg-[#E1D9BC] rounded-full hover:bg-[#F0F0DB] text-[#30364f]">
             Logout
           </button>
         </>
       ) : (
-        <Link href="/login" className="btn ">
+        <Link href="/login" className="btn border-none rounded-full bg-[#E1D9BC] text-[#30364F] ">
           Login
         </Link>
       )}
