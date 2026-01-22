@@ -1,9 +1,5 @@
-"use client";
-
-import Link from "next/link";
-
-const items = 
-  [
+export const items = 
+[
   {
     id: 1,
     name: 'MacBook Pro 14"',
@@ -287,52 +283,3 @@ const items =
   
   // 👉 বাকি items এখানেই রাখো (same data)
 ];
-
-
-export default function ItemsPage() {
-  return (
-    <div className="min-h-screen py-10 mt-20">
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-8 text-center">
-          Browse Items
-        </h1>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {items.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="h-48 w-full object-cover"
-              />
-
-              <div className="p-4">
-                <h3 className="font-semibold text-lg mb-1">
-                  {item.name}
-                </h3>
-
-                <p className="text-sm text-gray-500 mb-2">
-                  {item.brand}
-                </p>
-
-                <p className="font-bold text-green-600 mb-3">
-                  ${item.price}
-                </p>
-
-                <Link
-                  href={`/items/${item.id}`}
-                  className="block text-center bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                >
-                  View Details
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
