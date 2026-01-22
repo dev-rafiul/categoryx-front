@@ -58,7 +58,7 @@ export default function Navbar() {
       </div>
 
       <Link href="/" className="font-semibold text-xl border-none ">
-        Category <span className="font-bold text-[#E1D9BC] ">X</span> 
+        Category <span className="font-bold text-[#1E2939] ">X</span> 
       </Link>
     </div>
 

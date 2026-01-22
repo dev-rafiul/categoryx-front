@@ -7,7 +7,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-semibold text-white mb-4">
-              CatalogX
+              Category <span className="text-gray-500 font-bold">X</span>
             </h3>
             <p className="text-sm leading-relaxed mb-6">
               A modern product catalog platform to discover, compare, and

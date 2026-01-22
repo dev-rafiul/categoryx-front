@@ -73,10 +73,10 @@ export default function Home() {
 
   <div className="relative text-center z-10">
     <h1 className="text-5xl font-semibold mb-6 text-[#E1D9BC]">
-      Welcome to Catalog <span className="font-bold ">X</span> 
+      Welcome to Category <span className="font-bold text-[#1E2939]">X</span> 
     </h1>
 
-    <p className="text-xl mb-8 max-w-2xl mx-auto text-[#F0F0DB]">
+    <p className="text-xl mb-8 max-w-2xl mx-auto text-white">
      Latest gadgets and electronic devices including smartphones, laptops, accessories, and smart home technology designed to make life easier and more connected.
     </p>
 
